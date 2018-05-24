@@ -1,0 +1,19 @@
+1. Compile java file RidmikParser/ReverseParser with [javac RidmikParser.jva]/[javac ReverseParser.java]
+
+2. from python:
+
+    import subprocess
+    process = subprocess.Popen(['java', 'ReverseParser', "আমি বাংলায় গান গাই"], stdout=subprocess.PIPE)
+    out, _ = process.communicate()
+    eng = out.decode()
+    
+    eng -- > ami banglay gan gai 
+    
+    ###-------------------------------------------------------------------------------------------------###
+    import subprocess
+    process = subprocess.Popen(['java', 'RidmikParser', "ami banglay gan gai"], stdout=subprocess.PIPE)
+    out, _ = process.communicate()
+    eng = out.decode()
+
+    eng -- > আমি বাংলায় গান গাই
+
